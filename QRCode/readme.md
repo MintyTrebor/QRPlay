@@ -8,7 +8,7 @@ Games paths can be found by querying the MiSTer remote api (https://github.com/w
   
 I use CyberChef (https://gchq.github.io/CyberChef/) to generate the HTTP Post Request eg:  
 - URL = http://mister.local:8182/api/games/search
-- Input = '{"query":"crash bandicoot","system":"PSX"}'  
+- Input = {"query":"crash bandicoot","system":"PSX"}  
 will result in an output of matching titles including their full path.  
 
 To generate QR codes I use the CyberChef QR code generator with the sertings as follows :  
