@@ -8,10 +8,13 @@
 //Uncomment these lines if you need to control a 3 wire LED.
 
 //Change these setting below
-#define WIFI_SSID "PutYourSSIDHere"
-#define WIFI_PASSWORD "PutYourPasswordHere"
+#define WIFI_SSID "#####"
+#define WIFI_PASSWORD "*******"
 //if mister.local does not work replace with IP of your MiSTer eg : http://192.168.1.23:8182/api/games/launch
 #define WEBHOOK_URL "http://mister.local:8182/api/games/launch"
+#define RESET_URL "http://mister.local:8182/api/launch/menu"
+//change to false if you do not want the MiSTer to reset to the menu on removal of game card
+#define RESET_ON_REMOVE true
 
 //Set the GPIO Pin of the micro switch
 #define BUTTON_PIN 32
@@ -69,13 +72,23 @@ void callWebhook(String code)
   HTTPClient http;
   WiFiClient client;
   http.begin(client, WEBHOOK_URL);                   
-  // Specify content-type header
+  //Specify content-type header
   http.addHeader("Content-Type", "application/json");
   //post the QR data (should json {"path": "xxx"} str)
   int httpResponseCode = http.POST(code);
   Serial.print("HTTP Response code: ");
   Serial.println(httpResponseCode);            
-  // Free resources
+  http.end();
+}
+
+void callResetMister()
+{
+  HTTPClient http;
+  WiFiClient client;
+  http.begin(client, RESET_URL);                   
+  int httpResponseCode = http.POST("{}");
+  Serial.print("HTTP Response code: ");
+  Serial.println(httpResponseCode);            
   http.end();
 }
 
@@ -124,9 +137,9 @@ void setup()
 }
 
 void loop()
-{
-  //leds[0] = CRGB::White; 
+{ 
   bool connected = connectWifi();
+  //leds[0] = CRGB::White;
   if (isConnected != connected)
   {
     isConnected = connected;
@@ -136,13 +149,16 @@ void loop()
     limitSwitch.loop(); 
 
     if(limitSwitch.isPressed()){
-      Serial.println("The limit switch: UNTOUCHED -> TOUCHED");
+      Serial.println("Game Card Inserted");
       readQRCode();
     }
 
     if(limitSwitch.isReleased()){
-      Serial.println("The limit switch: TOUCHED -> UNTOUCHED");
-      Serial.println("Reset Mister Now!");
+      Serial.println("Game Card Removed");
+      if (RESET_ON_REMOVE){
+        Serial.println("Resetting Mister Now!");
+        callResetMister();
+      }
       ESP.restart();
     }
 
