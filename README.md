@@ -8,4 +8,6 @@ Uses the MiSTer Extensions Remote API - https://github.com/wizzomafizzo/mrext  -
 
 Project took about a day to complete and cost ~£25, which includes enough self laminating pouches for 100 QR Code Game Cards.  
 
-Need soldering skills, and a working Arduino-IDE software.
+Need soldering skills, and a working Arduino-IDE software.  
+
+Repo still WIP - Build instructions etc soon
