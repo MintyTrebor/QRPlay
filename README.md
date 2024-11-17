@@ -10,4 +10,6 @@ Project took about a day to complete and cost ~£25, which includes enough self 
 
 Need soldering skills, and a working Arduino-IDE software.  
 
-Repo still WIP - Build instructions etc soon
+Repo still WIP - Build instructions etc soon  
+
+I did this just to see if it was possible, I think the NFC Zaparoo is a superior turn-key solution https://zaparoo.org/. 
