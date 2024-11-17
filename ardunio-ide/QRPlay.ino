@@ -3,9 +3,6 @@
 #include <HTTPClient.h>
 #include <ESP32QRCodeReader.h>
 #include <ezButton.h>
-//#include <FastLED.h>
-//Code includes commented out commands to control a 3 wire RGB LED, using the FastLED library. 
-//Uncomment these lines if you need to control a 3 wire LED.
 
 //Change these setting below
 #define WIFI_SSID "#####"
@@ -18,11 +15,6 @@
 
 //Set the GPIO Pin of the micro switch
 #define BUTTON_PIN 32
-
-//3 Wire RGB LED Config
-//#define NUM_LEDS 1
-//#define DATA_PIN 13
-//CRGB leds[NUM_LEDS];
 
 //Change this if you use a different ESP32 Cam Model.
 //The QR code Library currently supports:
@@ -97,6 +89,9 @@ void readQRCode()
   qrCodeData = EmptyQRCodeData;
   reader.begin();
   Serial.println("Begin QR Code reader");
+  //set camera to greyscale for better detection
+  sensor_t * s = esp_camera_sensor_get();
+  s->set_special_effect(s, 2);
   bool waitForQR = true;
   while (waitForQR)
   {
@@ -128,10 +123,6 @@ void setup()
   Serial.println();
   limitSwitch.setDebounceTime(50);
   reader.setup();
-  //FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);
-  //FastLED.setMaxPowerInVoltsAndMilliamps(5,500);
-  //leds[0] = CRGB::White; 
-  //FastLED.show();
   Serial.println("Setup QRCode Reader");
   Serial.println("Waiting for Trigger");
 }
@@ -139,7 +130,6 @@ void setup()
 void loop()
 { 
   bool connected = connectWifi();
-  //leds[0] = CRGB::White;
   if (isConnected != connected)
   {
     isConnected = connected;
