@@ -11,8 +11,6 @@ From Tools menu select Board - Boards Manager then select the "ESP32 Wrover Modu
 Needs the following Libraries Installed from the library Manager via Sketch - Include Library - Manage Libraries
 - ezButton  
   
-If you choose to use a 3wire RGB LED then you will also need
-- FastLED
 
 Also need to download the following github library as a zip and manually install via Sketch - Include Library - Add .zip library
 https://github.com/MintyTrebor/ESP32QRCodeReader/tree/master  
