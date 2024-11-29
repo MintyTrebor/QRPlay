@@ -13,4 +13,4 @@ Need soldering skills, and a working Arduino-IDE software.
 
 WIP Project - More details etc soon  
 
-I did this just to see if it was possible, the NFC Zaparoo is a superior turn-key solution https://zaparoo.org/.
+I did this just as an experiment, the NFC Zaparoo is a superior turn-key solution https://zaparoo.org/.
