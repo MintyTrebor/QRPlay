@@ -15,7 +15,7 @@ WIP Project - More details etc soon
 
 I did this just as an experiment, the NFC Zaparoo is a superior turn-key solution https://zaparoo.org/.
 
-#QR Codes  
+# QR Codes  
 QR codes are generated with a text string of the full path of the game file on the MiSTer.  
 for example:  
 Arcade/_alternatives/_Galage/Galaga (Namco).mra
