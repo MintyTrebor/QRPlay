@@ -4,6 +4,9 @@ ESP32-CAM QR Code MiSTer Game Launcher Project
 A DIY QR code reader using an ESP32-CAM module and a 3d printed case.  
 Allows game launching on the MiSTer from a simple printed QR code over wifi.  
 Provides a basic web interface to search for games and generate a QR code, configure MiSTer behaviour on game card removal, and setup MiSTer IP address.  
+  
+Short Video  
+[![QRPlay](https://img.youtube.com/vi/fire6uOXGIQ/0.jpg)](https://www.youtube.com/watch?v=fire6uOXGIQ)
 
 Uses the MiSTer Extensions Zaparoo API - [https://wiki.zaparoo.org/API](https://wiki.zaparoo.org/API)  - all credit goes to wizzoma for enabling this project with the Remote API.  
 
@@ -29,4 +32,6 @@ The first time you use the Searching feature or add new games to your MiSTer, yo
 Search for a game, then select the game from the drop down results selction box, a QR code for your selection will be displayed. Right click and copy or save the QR code as required for use on a game card.  
 
 
-Test the QR code in an unsealed pouch before sealing.
+Test the QR code in an unsealed pouch before sealing.  
+![WebPage](https://raw.githubusercontent.com/MintyTrebor/QRPlay/main/media/QRPlay_WebPage.png)
+
