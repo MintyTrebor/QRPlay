@@ -15,7 +15,7 @@
 
 //Wifi Info
 #define WIFI_SSID "#####"
-#define WIFI_PASSWORD "*******"
+#define WIFI_PASSWORD "******"
 
 //Set the GPIO Pin of the micro switch
 #define BUTTON_PIN 32
@@ -293,7 +293,7 @@ void setup()
   });
   server.on("/qrcode.js", HTTP_GET, [](AsyncWebServerRequest *request){
     String html = QRCODE_JS;
-    request->send(200, "text/html", html);
+    request->send(200, "text/plain", html);
   });
 }
 
