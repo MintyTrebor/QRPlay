@@ -8,7 +8,7 @@ Provides a basic web interface to search for games and generate a QR code, confi
 Short Video  
 [![QRPlay](https://img.youtube.com/vi/1e1pu2H5x1Q/0.jpg)](https://www.youtube.com/watch?v=1e1pu2H5x1Q)
 
-Uses the MiSTer Extensions Zaparoo API - [https://wiki.zaparoo.org/API](https://wiki.zaparoo.org/API)  - all credit goes to wizzoma for enabling this project with the Remote API.  
+Uses the MiSTer Extensions Zaparoo API - [https://wiki.zaparoo.org/API](https://wiki.zaparoo.org/API)  - all credit goes to wizzoma for enabling this project with the API.  
 
 Project took about a day to complete and cost ~£25, which includes enough self laminating pouches for 100 QR Code Game Cards.  
 
